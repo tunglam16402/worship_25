@@ -25,19 +25,30 @@ function initHeader() {
   const headerMain = document.getElementById("headerMain");
 
   window.addEventListener("scroll", () => {
+    const isMobile = window.innerWidth <= 768;
+
     if (window.scrollY > 20) {
       header.classList.add("header--shrink");
-      headerTop.style.padding = "6px 0";
-      headerTop.style.background =
-        "linear-gradient(to right, #fef9e7, #fbe7c6)";
-      headerTop.style.color = "#333";
 
-      headerMain.style.padding = "6px 0";
+      if (isMobile) {
+        headerTop.style.background = "#ffffff";
+        headerTop.style.color = "#333";
+        headerMain.style.background = "#ffffff";
+      } else {
+        headerTop.style.background =
+          "linear-gradient(to right, #fef9e7, #fbe7c6)";
+        headerTop.style.color = "#333";
+      }
     } else {
       header.classList.remove("header--shrink");
-      headerTop.style.padding = "12px 0";
-      headerTop.style.background = "rgba(0,0,0,0.3)";
-      headerTop.style.color = "white";
+      if (isMobile) {
+        headerTop.style.background = "rgba(255,255,255,0)";
+        headerMain.style.background = "rgba(255,255,255,0)";
+        headerTop.style.color = "#fff";
+      } else {
+        headerTop.style.background = "rgba(0,0,0,0.3)";
+        headerTop.style.color = "white";
+      }
     }
   });
 
