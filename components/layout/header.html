@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="css/layout.css" />
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <!-- TOP BAR -->
+  <div class="header__top" id="headerTop">
+    <div class="header__top-inner">
+      <div class="header__line"></div>
+      <span class="header__title">Tín Ngưỡng Thờ Mẫu Việt Nam</span>
+      <div class="header__line"></div>
+    </div>
+  </div>
+
+  <!-- MAIN BAR -->
+  <div class="header__main main-width" id="headerMain">
+    <!-- Left Nav -->
+    <nav class="header__nav header__nav--left">
+      <a href="/pages/gioi-thieu.html" class="header__link">GIỚI THIỆU</a>
+      <a href="/pages/dang-thuc-tho-mau.html" class="header__link">
+        DẠNG THỨC THỜ MẪU
+      </a>
+    </nav>
+
+    <!-- Logo -->
+    <a href="/index.html" class="header__logo-box">
+      <div class="header__logo-glow"></div>
+      <img src="/assets/images/logo.png" alt="Logo" class="header__logo" />
+    </a>
+
+    <!-- Right Nav -->
+    <nav class="header__nav header__nav--right">
+      <a href="/pages/tu-phu.html" class="header__link">TỨ PHỦ THÁNH MẪU</a>
+      <a href="/pages/hau-dong.html" class="header__link">HẦU ĐỒNG</a>
+    </nav>
+
+    <!-- Mobile Toggle -->
+    <button id="mobileToggle" class="header__toggle" type="button">
+      <i class="fa-solid fa-bars header__toggle-icon"></i>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu main-width" id="mobileMenu">
+  <div class="mobile-menu__overlay" id="mobileOverlay"></div>
+
+  <div class="mobile-menu__panel" id="mobilePanel">
+    <!-- Close Button -->
+    <button class="mobile-menu__close" id="mobileClose">
+      <i class="fa-solid fa-xmark mobile-menu__close-icon"></i>
+    </button>
+
+    <nav class="mobile-menu__nav">
+      <a href="/index.html" class="mobile-menu__link">TRANG CHỦ</a>
+      <a href="/pages/tu-phu.html" class="mobile-menu__link"
+        >TAM PHỦ – TỨ PHỦ</a
+      >
+      <a href="/pages/hau-dong.html" class="mobile-menu__link">HẦU ĐỒNG</a>
+      <a href="/pages/dien-tho.html" class="mobile-menu__link">ĐIỆN THỜ</a>
+      <a href="/pages/gia-tri-van-hoa.html" class="mobile-menu__link">
+        GIÁ TRỊ VĂN HÓA
+      </a>
+    </nav>
+
+    <div class="mobile-menu__footer">
+      <p class="mobile-menu__note">Di sản văn hoá UNESCO 2016</p>
+    </div>
+  </div>
+</div>

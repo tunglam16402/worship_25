@@ -1,0 +1,217 @@
+/* Hero Section */
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* SLIDES */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  animation: kenburns 15s ease-in-out infinite;
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+/* GRADIENT OVERLAYS */
+.hero-overlay--dark {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.hero-overlay--top {
+  position: absolute;
+  top: 0;
+  inset-inline: 0;
+  height: 150px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+}
+
+.hero-overlay--bottom {
+  position: absolute;
+  bottom: 0;
+  inset-inline: 0;
+  height: 200px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+}
+
+/* CONTENT */
+.hero-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fdebd0;
+  padding: 0 20px;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 700;
+  text-transform: uppercase;
+  animation: slideUp 1.5s ease forwards;
+}
+
+.hero-subtitle {
+  font-size: 24px;
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+}
+
+/* DECOR LINES */
+.decor-line {
+  display: flex;
+  gap: 10px;
+  margin: 24px 0;
+  animation: fadeIn 2s ease forwards;
+  align-items: center;
+}
+
+.decor-line div {
+  width: 60px;
+  height: 2px;
+  background: var(--color-primary);
+}
+
+.decor-line span {
+  width: 10px;
+  height: 10px;
+  background: var(--color-primary);
+  border-radius: 50%;
+}
+
+/* PAGINATION */
+.hero-pagination {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.hero-pagination .bullet {
+  width: 10px;
+  height: 10px;
+  background: #ffffff80;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero-pagination .bullet.active {
+  width: 40px;
+  background: #fff;
+  border-radius: 20px;
+}
+
+/* SCROLL INDICATOR */
+.scroll-indicator {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 1.8s infinite;
+}
+
+.mouse {
+  width: 26px;
+  height: 44px;
+  border: 2px solid #fff8;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  padding: 6px;
+}
+
+.wheel {
+  width: 4px;
+  height: 10px;
+  background: #fff9;
+  border-radius: 4px;
+  animation: scroll 1.8s infinite;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 72px;
+  }
+
+  .hero-subtitle {
+    font-size: 32px;
+    margin-top: 28px;
+  }
+
+  .decor-line div {
+    width: 80px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 96px;
+  }
+}
+
+/* Key frame */
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, -10px);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes kenburns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.15);
+  }
+}
