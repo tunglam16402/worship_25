@@ -37,6 +37,7 @@
   align-items: center;
   justify-content: space-between;
   transition: all 0.4s ease;
+  padding: 15px;
 }
 
 /* NAVIGATION */
