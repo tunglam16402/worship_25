@@ -4,6 +4,53 @@
   --font-primary: #ccc;
   --color-primary: rgb(222, 198, 161);
   --color-secondary: rgb(179, 112, 12);
+  --color-primary-light: rgba(255, 240, 219, 1);
+  --text-color: #171717;
+  --text-color-light: #4b4747;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;500;600;700;800;900&display=swap");
+
+@font-face {
+  font-family: "TrajanPro3";
+  src: url("../assets/fonts/TrajanPro3ExtraLight.otf") format("opentype");
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TrajanPro3";
+  src: url("../assets/fonts/TrajanPro3Light.otf") format("opentype");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TrajanPro3";
+  src: url("../assets/fonts/TrajanPro3Regular.otf") format("opentype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TrajanPro3";
+  src: url("../assets/fonts/TrajanPro3SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TrajanPro3";
+  src: url("../assets/fonts/TrajanPro3Bold.otf") format("opentype");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TrajanPro3";
+  src: url("../assets/fonts/TrajanPro3Black.otf") format("opentype");
+  font-weight: 900;
+  font-display: swap;
 }
 
 body {
@@ -25,15 +72,16 @@ body {
   .main-width {
     padding: 0 30px;
   }
-
-  .page-padding {
-    padding-top: 100px;
-    padding-bottom: 100px;
-  }
 }
 
-.font-primary {
-  font-family: "UTPTrajanPro", serif;
+a {
+  font-family: "TrajanPro3", serif;
+}
+
+p,
+span,
+li {
+  font-family: "Darker Grotesque", sans-serif;
 }
 
 .hover-text-primary:hover {
@@ -52,16 +100,12 @@ body {
   border-color: var(--color-primary);
 }
 
-a {
-  font-family: "UTPTrajanPro", serif;
-}
-
 h1,
 h2,
 h3,
 h4,
 h5 {
-  font-family: "UTPTrajanPro", serif;
+  font-family: "TrajanPro3", serif;
 }
 
 /* h1,

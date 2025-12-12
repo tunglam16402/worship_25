@@ -58,8 +58,8 @@
 }
 
 .hero-title {
-  font-size: 48px;
-  font-weight: 700;
+  font-size: 40px;
+  font-weight: 600;
   text-transform: uppercase;
   animation: slideUp 1.5s ease forwards;
 }
@@ -148,7 +148,7 @@
 /* Responsive */
 @media (min-width: 768px) {
   .hero-title {
-    font-size: 72px;
+    font-size: 64px;
   }
 
   .hero-subtitle {
@@ -163,7 +163,7 @@
 
 @media (min-width: 1024px) {
   .hero-title {
-    font-size: 96px;
+    font-size: 90px;
   }
 }
 

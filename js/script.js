@@ -21,10 +21,16 @@ loadComponent("footer", "/components/layout/footer.html");
 /* header*/
 function initHeader() {
   const header = document.getElementById("header");
+  const path = window.location.pathname;
+  const isHome = path === "/" || path.endsWith("index.html");
 
-  window.addEventListener("scroll", () => {
-    header.classList.toggle("header--scrolled", window.scrollY > 20);
-  });
+  if (!isHome) {
+    header.classList.add("header--scrolled");
+  } else {
+    window.addEventListener("scroll", () => {
+      header.classList.toggle("header--scrolled", window.scrollY > 20);
+    });
+  }
 
   /* mobile header */
   const mobileMenu = document.getElementById("mobileMenu");
@@ -49,4 +55,3 @@ function initHeader() {
   closeBtn.addEventListener("click", closeMenu);
   mobileOverlay.addEventListener("click", closeMenu);
 }
-

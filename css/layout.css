@@ -100,7 +100,7 @@
 }
 
 #header.header--scrolled #headerTop {
-  background: rgba(255, 240, 219, 1);
+  background: var(--color-primary-light);
   color: #000;
 }
 
@@ -216,7 +216,7 @@
 
   .header__nav {
     display: flex;
-    gap: 50px;
+    gap: 80px;
     flex: 1;
     justify-content: center;
   }
@@ -240,7 +240,11 @@
 
 @media (min-width: 1024px) {
   .header__link {
-    font-size: 24px;
+    font-size: 20px;
+  }
+
+  .header__nav {
+    gap: 120px;
   }
 }
 
