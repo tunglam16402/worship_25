@@ -34,7 +34,7 @@
 
 /* CONTENT */
 .forms__content {
-  padding: 24px;
+  padding: 16px;
   text-align: left;
 }
 
@@ -46,8 +46,9 @@
 }
 
 .forms__list {
-  margin-left: 20px;
   color: #555;
+  margin-left: 16px;
+  list-style: circle;
 }
 
 .forms__list-item {
@@ -66,10 +67,20 @@
   .forms__image-wrapper {
     height: 400px;
   }
+
+  .forms__content {
+    padding: 18px;
+    text-align: left;
+  }
 }
 
 @media (min-width: 1024px) {
   .forms__image-wrapper {
     height: 500px;
+  }
+
+  .forms__content {
+    padding: 24px;
+    text-align: left;
   }
 }

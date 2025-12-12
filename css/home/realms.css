@@ -6,13 +6,6 @@
   margin-top: 48px;
 }
 
-@media (min-width: 640px) {
-  .realms__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-  }
-}
-
 /* ITEM */
 .realms__item {
   padding: 24px;
@@ -40,7 +33,6 @@
 /* IMAGE */
 .realms__image-wrapper {
   width: 100%;
-  aspect-ratio: 1 / 1;
   border-radius: 16px;
   overflow: hidden;
   position: relative;
@@ -82,4 +74,15 @@
   background: rgba(0, 0, 0, 0.7);
   margin: 12px auto 0 auto;
   border-radius: 100px;
+}
+
+@media (min-width: 768px) {
+  .realms__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .realms__image-wrapper {
+    aspect-ratio: 1 / 1;
+  }
 }

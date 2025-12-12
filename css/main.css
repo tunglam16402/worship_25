@@ -1,11 +1,11 @@
-/* HomePage */
+/*--------------- HomePage ----------------*/
 
-.home-padding {
+.page-padding {
   padding-top: 80px;
   padding-bottom: 80px;
 }
 
-.home-title {
+.page-title {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,38 +14,62 @@
   justify-content: center;
 }
 
-.home-title__text {
+.page-title__text {
   font-size: 32px;
   text-transform: uppercase;
   margin-top: 8px;
   font-family: "UTPTrajanPro", serif;
 }
 
-.home-title__line {
+.page-title__line {
   width: 234px;
   height: 8px;
 }
 
-.home-title__line--left {
+.page-title__line--left {
   display: none;
 }
 
 @media (min-width: 768px) {
-  .home-title {
+  .page-title {
     flex-direction: row;
     gap: 32px;
   }
 
-  .home-title__text {
+  .page-title__text {
     font-size: 40px;
   }
 
-  .home-title__line--left {
+  .page-title__line--left {
     display: block;
   }
 
-  .home-padding {
+  .page-padding {
     padding-top: 100px;
     padding-bottom: 100px;
   }
+
+  .page-title__line {
+    width: 160px;
+    height: 8px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-title__line {
+    width: 234px;
+    height: 8px;
+  }
+}
+
+/*-------------- Introduction Page -----------------*/
+.page-background-title {
+  background-image: url("../assets/images/title-bg.webp");
+  width: 100%;
+  height: 400px;
+  background-repeat: no-repeat;
+  /* background-size: cover; */
+  background-position: center;
+  background-color: var(--color-primary);
+  background-blend-mode: lighten;
 }
