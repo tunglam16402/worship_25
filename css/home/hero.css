@@ -14,11 +14,11 @@
   background-position: center;
   opacity: 0;
   transition: opacity 1.5s ease-in-out;
-  animation: kenburns 15s ease-in-out infinite;
 }
 
 .hero-slide.active {
   opacity: 1;
+  animation: kenburns 15s ease-in-out infinite;
 }
 
 /* GRADIENT OVERLAYS */

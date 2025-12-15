@@ -5,10 +5,6 @@
 .introduction__container {
 }
 
-.introduction__item--flex {
-  display: flex;
-}
-
 .introduction__item--flex .introduction__text {
   margin-top: 0;
 }
@@ -22,8 +18,8 @@
 
 /* content text */
 .introduction__text {
-  font-size: 16px;
-  line-height: 32px;
+  font-size: 14px;
+  line-height: 28px;
   text-align: justify;
   color: var(--text-color-light);
   margin-top: 16px;
@@ -60,8 +56,13 @@
 
   .introduction__text {
     font-size: 16px;
+    line-height: 32px;
     margin-top: 28px;
     padding: 0 28px;
+  }
+
+  .introduction__item--flex {
+    display: flex;
   }
 }
 
