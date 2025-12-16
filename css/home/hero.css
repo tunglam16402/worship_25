@@ -1,51 +1,46 @@
-/* Hero Section */
-.hero-banner {
+/* ===== Hero Section ===== */
+.hero {
   position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  /* height: 100vh; */
+  min-height: 100vh;
 }
 
-/* SLIDES */
-.hero-slide {
+.hero__slide {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0;
-  transition: opacity 1.5s ease-in-out;
 }
 
-.hero-slide.active {
-  opacity: 1;
+.hero__slide.is-active {
   animation: kenburns 15s ease-in-out infinite;
 }
 
-/* GRADIENT OVERLAYS */
-.hero-overlay--dark {
+/* ===== Overlays ===== */
+.hero__overlay {
   position: absolute;
   inset: 0;
+}
+
+.hero__overlay--dark {
   background: rgba(0, 0, 0, 0.35);
 }
 
-.hero-overlay--top {
-  position: absolute;
+.hero__overlay--top {
   top: 0;
-  inset-inline: 0;
-  height: 150px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+  bottom: auto;
+  height: 250px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
 }
 
-.hero-overlay--bottom {
-  position: absolute;
-  bottom: 0;
-  inset-inline: 0;
+.hero__overlay--bottom {
+  top: auto;
   height: 200px;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
 }
 
-/* CONTENT */
-.hero-content {
+/* ===== Content ===== */
+.hero__content {
   position: absolute;
   inset: 0;
   display: flex;
@@ -57,77 +52,52 @@
   padding: 0 20px;
 }
 
-.hero-title {
+.hero__title {
   font-size: 40px;
   font-weight: 600;
   text-transform: uppercase;
   animation: slideUp 1.5s ease forwards;
 }
 
-.hero-subtitle {
+.hero__subtitle {
   font-size: 24px;
   margin-top: 20px;
   opacity: 0;
   animation: fadeIn 2s ease forwards;
 }
 
-/* DECOR LINES */
-.decor-line {
+/* ===== Decor line ===== */
+.hero__decor {
   display: flex;
+  align-items: center;
   gap: 10px;
   margin: 24px 0;
   animation: fadeIn 2s ease forwards;
-  align-items: center;
 }
 
-.decor-line div {
+.hero__decor-line {
   width: 60px;
   height: 2px;
   background: var(--color-primary);
 }
 
-.decor-line span {
+.hero__decor-dot {
   width: 10px;
   height: 10px;
   background: var(--color-primary);
   border-radius: 50%;
 }
 
-/* PAGINATION */
-.hero-pagination {
+/* ===== Scroll indicator ===== */
+.hero__scroll {
   position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-}
-
-.hero-pagination .bullet {
-  width: 10px;
-  height: 10px;
-  background: #ffffff80;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.hero-pagination .bullet.active {
-  width: 40px;
-  background: #fff;
-  border-radius: 20px;
-}
-
-/* SCROLL INDICATOR */
-.scroll-indicator {
-  position: absolute;
-  bottom: 50px;
+  bottom: 80px;
   left: 50%;
   transform: translateX(-50%);
   animation: bounce 1.8s infinite;
 }
 
-.mouse {
+.hero__mouse {
   width: 26px;
   height: 44px;
   border: 2px solid #fff8;
@@ -137,7 +107,7 @@
   padding: 6px;
 }
 
-.wheel {
+.hero__wheel {
   width: 4px;
   height: 10px;
   background: #fff9;
@@ -145,30 +115,29 @@
   animation: scroll 1.8s infinite;
 }
 
-/* Responsive */
+/* ===== Responsive ===== */
 @media (min-width: 768px) {
-  .hero-title {
+  .hero__title {
     font-size: 64px;
   }
 
-  .hero-subtitle {
+  .hero__subtitle {
     font-size: 32px;
     margin-top: 28px;
   }
 
-  .decor-line div {
+  .hero__decor-line {
     width: 80px;
   }
 }
 
 @media (min-width: 1024px) {
-  .hero-title {
+  .hero__title {
     font-size: 90px;
   }
 }
 
-/* Key frame */
-
+/* ===== Animations ===== */
 @keyframes fadeIn {
   to {
     opacity: 1;
@@ -176,11 +145,11 @@
 }
 
 @keyframes scroll {
-  0% {
+  from {
     opacity: 1;
     transform: translateY(0);
   }
-  100% {
+  to {
     opacity: 0;
     transform: translateY(14px);
   }
@@ -197,21 +166,21 @@
 }
 
 @keyframes slideUp {
-  0% {
+  from {
     opacity: 0;
     transform: translateY(40px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
 @keyframes kenburns {
-  0% {
+  from {
     transform: scale(1);
   }
-  100% {
+  to {
     transform: scale(1.15);
   }
 }

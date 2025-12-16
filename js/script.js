@@ -5,16 +5,20 @@ async function loadComponent(id, file, callback) {
   const html = await fetch(file).then((res) => res.text());
   element.innerHTML = html;
 
-  if (callback) callback();
+  if (callback) callback(element);
 }
 
 loadComponent("header-component", "/components/layout/header.html", initHeader);
 
-loadComponent("hero-component", "/components/home/hero.html", initHeroSlider);
-loadComponent("introduction-component", "/components/home/introduction.html");
-loadComponent("forms-component", "/components/home/forms.html");
-loadComponent("realms-component", "/components/home/realms.html");
-loadComponent("ritual-component", "/components/home/ritual.html");
+Promise.all([
+  loadComponent("hero-component", "/components/home/hero.html", initSliders),
+  loadComponent("introduction-component", "/components/home/introduction.html"),
+  loadComponent("forms-component", "/components/home/forms.html"),
+  loadComponent("realms-component", "/components/home/realms.html"),
+  loadComponent("ritual-component", "/components/home/ritual.html"),
+]).then(() => {
+  initScrollAnimation();
+});
 
 loadComponent("footer", "/components/layout/footer.html");
 
@@ -56,51 +60,124 @@ function initHeader() {
   mobileOverlay.addEventListener("click", closeMenu);
 }
 
-// swpier
-function initHeroSlider() {
-  const hero = document.querySelector("[data-hero]");
-  if (!hero) return;
+// swiper
+function initSliders(root = document) {
+  const sliders = root.querySelectorAll("[data-slider]");
 
-  const slides = hero.querySelectorAll(".hero-slide");
-  const pagination = hero.querySelector(".hero-pagination");
+  sliders.forEach((slider) => {
+    if (slider.dataset.inited) return;
+    slider.dataset.inited = "true";
 
-  let current = 0;
-  const total = slides.length;
-  const intervalTime = 6000;
+    const slides = slider.querySelectorAll(".slider__slide");
+    const pagination = slider.querySelector(".slider__pagination");
 
-  slides.forEach((_, index) => {
-    const bullet = document.createElement("span");
-    bullet.className = "bullet";
-    if (index === 0) bullet.classList.add("active");
+    if (!slides.length) return;
 
-    bullet.addEventListener("click", () => {
-      goToSlide(index);
-      resetAutoSlide();
+    let current = 0;
+    const total = slides.length;
+    const intervalTime = Number(slider.dataset.interval) || 6000;
+
+    //pagination
+    let bullets = [];
+
+    if (pagination) {
+      pagination.innerHTML = "";
+
+      slides.forEach((_, index) => {
+        const bullet = document.createElement("span");
+        bullet.className = "slider__bullet";
+        if (index === 0) bullet.classList.add("is-active");
+
+        bullet.addEventListener("click", () => {
+          goToSlide(index);
+          resetAutoSlide();
+        });
+
+        pagination.appendChild(bullet);
+        bullets.push(bullet);
+      });
+    }
+
+    function goToSlide(index) {
+      slides[current].classList.remove("is-active");
+      bullets[current]?.classList.remove("is-active");
+
+      current = index;
+
+      slides[current].classList.add("is-active");
+      bullets[current]?.classList.add("is-active");
+    }
+
+    function nextSlide() {
+      goToSlide((current + 1) % total);
+    }
+
+    //auto slide
+    let autoSlide = setInterval(nextSlide, intervalTime);
+
+    function resetAutoSlide() {
+      clearInterval(autoSlide);
+      autoSlide = setInterval(nextSlide, intervalTime);
+    }
+
+    //swipe slide
+    let startX = 0;
+    let isDragging = false;
+
+    slider.addEventListener("pointerdown", (e) => {
+      isDragging = true;
+      startX = e.clientX;
     });
 
-    pagination.appendChild(bullet);
+    slider.addEventListener("pointerup", (e) => {
+      if (!isDragging) return;
+      isDragging = false;
+
+      const diff = startX - e.clientX;
+      if (Math.abs(diff) < 60) return;
+
+      diff > 0
+        ? goToSlide((current + 1) % total)
+        : goToSlide((current - 1 + total) % total);
+
+      resetAutoSlide();
+    });
+  });
+}
+
+//scroll animation
+
+function initScrollAnimation() {
+  // auto add animation heading
+  document.querySelectorAll("h1, h2").forEach((el) => {
+    if (!el.hasAttribute("data-animate")) {
+      el.setAttribute("data-animate", "fade-up");
+    }
   });
 
-  const bullets = pagination.querySelectorAll(".bullet");
+  // auto add animation heading line
+  document
+    .querySelectorAll(".page-title__line--left")
+    .forEach((el) => (el.dataset.animate = "fade-left"));
 
-  function goToSlide(index) {
-    slides[current].classList.remove("active");
-    bullets[current].classList.remove("active");
+  document
+    .querySelectorAll(".page-title__line--right")
+    .forEach((el) => (el.dataset.animate = "fade-right"));
 
-    current = index;
+  const animatedItems = document.querySelectorAll("[data-animate]");
+  if (!animatedItems.length) return;
 
-    slides[current].classList.add("active");
-    bullets[current].classList.add("active");
-  }
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
 
-  function nextSlide() {
-    goToSlide((current + 1) % total);
-  }
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.2 }
+  );
 
-  let autoSlide = setInterval(nextSlide, intervalTime);
-
-  function resetAutoSlide() {
-    clearInterval(autoSlide);
-    autoSlide = setInterval(nextSlide, intervalTime);
-  }
+  animatedItems.forEach((item) => observer.observe(item));
 }

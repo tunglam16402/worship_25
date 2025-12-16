@@ -20,8 +20,9 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
-  color: white;
+  color: var(--color-primary);
   padding: 6px 0;
+  /* border-bottom: 1px solid var(--color-primary-light); */
 }
 
 .header__line {

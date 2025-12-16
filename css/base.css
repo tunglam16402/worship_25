@@ -108,6 +108,11 @@ h5 {
   font-family: "TrajanPro3", serif;
 }
 
+.section-shell {
+  min-height: 100vh;
+  background-color: #999;
+}
+
 /* h1,
 h2,
 h3,

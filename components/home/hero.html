@@ -1,63 +1,68 @@
 <link rel="stylesheet" href="../../css/home/hero.css" />
 
-<section class="hero-banner" data-hero>
+<section class="slider hero" data-slider data-autoplay="true">
+  <!-- Slides -->
   <div
-    class="hero-slide active"
+    class="slider__slide hero__slide is-active"
     style="
       background-image: url(&quot;/assets/images/home/hero-banner-1.webp&quot;);
     "
   ></div>
+
   <div
-    class="hero-slide"
+    class="slider__slide hero__slide"
     style="
       background-image: url(&quot;/assets/images/home/hero-banner-2.png&quot;);
     "
   ></div>
+
   <div
-    class="hero-slide"
+    class="slider__slide hero__slide"
     style="
       background-image: url(&quot;/assets/images/home/hero-banner-3.png&quot;);
     "
   ></div>
 
-  <!-- Gradient overlays -->
-  <div class="hero-overlay hero-overlay--top"></div>
-  <div class="hero-overlay hero-overlay--bottom"></div>
-  <div class="hero-overlay hero-overlay--dark"></div>
+  <!-- Overlays -->
+  <div class="hero__overlay hero__overlay--top"></div>
+  <div class="hero__overlay hero__overlay--bottom"></div>
+  <div class="hero__overlay hero__overlay--dark"></div>
 
   <!-- Content -->
-  <div class="hero-content">
-    <div class="decor-line top">
-      <div></div>
-      <span></span>
-      <div></div>
+  <div class="hero__content">
+    <!-- Decor top -->
+    <div class="hero__decor" data-animate="fade-down">
+      <span class="hero__decor-line"></span>
+      <span class="hero__decor-dot"></span>
+      <span class="hero__decor-line"></span>
     </div>
 
-    <h1 class="hero-title">Tín Ngưỡng Thờ Mẫu<br />Việt Nam</h1>
+    <h1 class="hero__title">
+      Tín Ngưỡng Thờ Mẫu<br />
+      Việt Nam
+    </h1>
 
-    <div class="hero-subtitle">
+    <div class="hero__subtitle">
       <p>Di sản văn hoá phi vật thể</p>
-      <div class="subline">
-        <div></div>
-        <span>UNESCO 2016</span>
-        <div></div>
-      </div>
+
+      <span>UNESCO 2016</span>
     </div>
 
-    <div class="decor-line bottom">
-      <div></div>
-      <span></span>
-      <div></div>
+    <!-- Decor bottom -->
+    <div class="hero__decor" data-animate="fade-up">
+      <span class="hero__decor-line"></span>
+      <span class="hero__decor-dot"></span>
+      <span class="hero__decor-line"></span>
     </div>
   </div>
 
-  <!-- Pagination -->
-  <div class="hero-pagination"></div>
+  <!-- Slider pagination  -->
+  <div class="slider__pagination"></div>
 
   <!-- Scroll indicator -->
-  <div class="scroll-indicator">
-    <div class="mouse">
-      <div class="wheel"></div>
+  <div class="hero__scroll">
+    <div class="hero__mouse">
+      <span class="hero__wheel"></span>
     </div>
   </div>
 </section>
