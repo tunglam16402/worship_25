@@ -7,10 +7,10 @@ async function loadComponent(id, file, callback) {
 
   if (callback) callback(element);
 }
-
-loadComponent("header-component", "/components/layout/header.html", initHeader);
+loadComponent("header-component", "/components/layout/header.html", initHeader),
 
 Promise.all([
+
   loadComponent("hero-component", "/components/home/hero.html", initSliders),
   loadComponent("introduction-component", "/components/home/introduction.html"),
   loadComponent("forms-component", "/components/home/forms.html"),
