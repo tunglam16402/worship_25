@@ -51,41 +51,7 @@
   text-align: center;
 }
 
-.introduction__more {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 24px;
-}
 
-.introduction__more-link {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 16px;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: var(--color-secondary);
-  transition: color 0.3s ease;
-}
-
-.introduction__more-link:hover {
-  color: var(--color-primary);
-}
-
-.introduction__underline {
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  height: 2px;
-  width: 0;
-  background: var(--color-primary);
-  transition: width 0.3s ease;
-}
-
-.introduction__more-link:hover .introduction__underline {
-  width: 100%;
-}
 
 @media (min-width: 768px) {
   .introduction__content {

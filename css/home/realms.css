@@ -18,16 +18,16 @@
 
 /* COLORS */
 .realms__item--red {
-  background: rgb(252, 165, 165); /* red-300 */
+  background: rgb(252, 165, 165); 
 }
 .realms__item--yellow {
-  background: rgb(253, 224, 71); /* yellow-300 */
+  background: rgb(253, 224, 71); 
 }
 .realms__item--gray {
-  background: rgb(243, 244, 246); /* gray-100 */
+  background: rgb(243, 244, 246); 
 }
 .realms__item--green {
-  background: rgb(134, 239, 172); /* green-300 */
+  background: rgb(134, 239, 172); 
 }
 
 /* IMAGE */
@@ -55,7 +55,7 @@
   margin-top: 16px;
 }
 
-.realms__realm-name {
+.realms__name {
   font-size: 26px;
   font-weight: 700;
   text-transform: uppercase;
