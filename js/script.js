@@ -1,3 +1,4 @@
+//import homepage section to home page
 async function loadComponent(id, file, callback) {
   const element = document.getElementById(id);
   if (!element) return;
@@ -7,10 +8,13 @@ async function loadComponent(id, file, callback) {
 
   if (callback) callback(element);
 }
-loadComponent("header-component", "/components/layout/header.html", initHeader),
 
 Promise.all([
-
+  loadComponent(
+    "header-component",
+    "/components/layout/header.html",
+    initHeader
+  ),
   loadComponent("hero-component", "/components/home/hero.html", initSliders),
   loadComponent("introduction-component", "/components/home/introduction.html"),
   loadComponent("forms-component", "/components/home/forms.html"),
@@ -22,7 +26,7 @@ Promise.all([
 
 loadComponent("footer", "/components/layout/footer.html");
 
-/* header*/
+/* header scroll*/
 function initHeader() {
   const header = document.getElementById("header");
   const path = window.location.pathname;
@@ -146,7 +150,6 @@ function initSliders(root = document) {
 }
 
 //scroll animation
-
 function initScrollAnimation() {
   // auto add animation heading
   document.querySelectorAll("h1, h2").forEach((el) => {
@@ -155,7 +158,7 @@ function initScrollAnimation() {
     }
   });
 
-  // auto add animation heading line
+  // auto add animation page title lines
   document
     .querySelectorAll(".page-title__line--left")
     .forEach((el) => (el.dataset.animate = "fade-left"));
@@ -164,9 +167,11 @@ function initScrollAnimation() {
     .querySelectorAll(".page-title__line--right")
     .forEach((el) => (el.dataset.animate = "fade-right"));
 
+  // collect animated items
   const animatedItems = document.querySelectorAll("[data-animate]");
   if (!animatedItems.length) return;
 
+  // observer
   const observer = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {

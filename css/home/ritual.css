@@ -1,0 +1,70 @@
+.ritual {
+  position: relative;
+  width: 100%;
+}
+
+.ritual__bg {
+  position: relative;
+  background-image: url("https://cdn2.tuoitre.vn/thumb_w/730/tto/i/s626/2016/12/08/f90c0cda.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  margin-top: 60px;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.ritual__content {
+  background-color: white;
+  border-radius: 4px;
+  padding: 40px;
+  width: 100%;
+}
+
+.ritual__title {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.ritual__text {
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-color-light);
+  text-align: justify;
+  line-height: 24px;
+}
+
+@media (min-width: 768px) {
+  .ritual__content {
+    max-width: 500px;
+    padding: 40px;
+  }
+
+  .ritual__title {
+    font-size: 28px;
+  }
+
+  .ritual__text {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ritual__content {
+    max-width: 550px;
+    padding: 50px;
+  }
+
+  .ritual__title {
+    font-size: 30px;
+  }
+
+  .ritual__text {
+    font-size: 18px;
+    line-height: 32px;
+  }
+}

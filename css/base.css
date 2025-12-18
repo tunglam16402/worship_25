@@ -7,6 +7,9 @@
   --color-primary-light: rgba(255, 240, 219, 1);
   --text-color: #171717;
   --text-color-light: #4b4747;
+  --max-container-width: 1320px;
+  --max-container-width-small: 1200px;
+  --default-width: 100%;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;500;600;700;800;900&display=swap");
@@ -56,9 +59,6 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  --max-container-width: 1320px;
-  --max-container-width-small: 1200px;
-  --default-width: 100%;
 }
 
 .main-width {
@@ -110,12 +110,4 @@ h5 {
 
 .section-shell {
   min-height: 100vh;
-  background-color: #999;
 }
-
-/* h1,
-h2,
-h3,
-h4 {
-  font-family:  --font-Grotesque;
-} */
