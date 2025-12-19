@@ -9,13 +9,20 @@ const DATA = {
     name: "Thiên Phủ",
     title: "Mẫu Đệ Nhất Thiên Tiên",
     subTitle: "Thánh Mẫu Cửu Trùng Thiên",
-    mainText:
-      "Mẫu Đệ Nhất Thiên Tiên là Thánh Mẫu Cửu Trùng ngự nơi chín tầng mây, cai quản Thiên phủ, tiên cung. Ngài là một trong bốn vị Tứ Phủ Thánh Mẫu. Mẫu Thiên Tiên luôn giữ vị trí thứ nhất trong hàng Thánh Mẫu.",
-    mainImage: "/assets/images/home/mau-thien-tien.jpg",
+
+    main: {
+      text: "Mẫu Đệ Nhất Thiên Tiên là Thánh Mẫu Cửu Trùng ngự nơi chín tầng mây, cai quản Thiên phủ, tiên cung. Ngài là một trong bốn vị Tứ Phủ Thánh Mẫu. Mẫu Thiên Tiên luôn giữ vị trí thứ nhất trong hàng Thánh Mẫu.",
+      image: "/assets/images/home/mau-thien-tien.jpg",
+      imageDesc:
+        "Tranh vẽ Mẫu Đệ Nhất Thiên Tiên trong trang phục thời Lê. Tác phẩm thuộc dự án Thánh Nhan bởi trang Four Palaces - Tứ Phủ.",
+    },
 
     role: {
       text: `Mẫu Đệ Nhất Thiên Tiên là vị Thánh Mẫu đứng đầu Thiên Phủ, giữ vai trò cai quản cõi Trời trong hệ thống tín ngưỡng thờ Mẫu Việt Nam.
       Bà tượng trưng cho quyền lực tối cao của thiên giới, là đấng chủ quản sự vận hành của trời đất và trật tự vũ trụ, đồng thời là cầu nối thiêng liêng giữa con người với thế giới thần linh.
+      
+      <br/>
+
       Về lĩnh vực quản lý, Mẫu Thượng Thiên gắn liền với các hiện tượng tự nhiên như mây, gió, mưa, sấm sét, biểu trưng cho sức mạnh của trời cao chi phối đời sống con người. 
       Trong đời sống tín ngưỡng, bà được tôn thờ như đấng ban phúc, giải hạn, che chở và bảo hộ, giúp con người cầu mong bình an, may mắn và cuộc sống thuận hòa.`,
       image: "/assets/images/home/mau-thien-tien.jpg",
@@ -149,8 +156,6 @@ const data = DATA[phu];
 document.getElementById("realms-detail__name").textContent = data.name;
 document.getElementById("realms-detail__title").textContent = data.title;
 document.getElementById("realms-detail__sub-title").textContent = data.subTitle;
-document.getElementById("realms-detail__text").textContent = data.mainText;
-document.getElementById("realms-detail__image").src = data.mainImage;
 
 document.querySelectorAll(".realms-detail__section").forEach((section) => {
   const key = section.dataset.key;
@@ -165,4 +170,7 @@ document.querySelectorAll(".realms-detail__section").forEach((section) => {
     img.src = content.image;
     img.alt = data.title;
   }
+
+  const imgDesc = section.querySelector(".section-image__desc");
+  if (imgDesc) imgDesc.textContent = content.imageDesc;
 });

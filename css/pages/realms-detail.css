@@ -1,0 +1,69 @@
+.realms-detail {
+}
+
+#realms-detail__title {
+  font-size: 24px;
+}
+
+#realms-detail__sub-title {
+  font-size: 16px;
+  margin-top: 10px;
+  color: var(--text-color-light);
+  opacity: 0.7;
+}
+
+/* section */
+.realms-detail__section-title {
+  margin-top: 36px;
+}
+
+.realms-detail__section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.section-text {
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 780px;
+}
+
+.section-image {
+  width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.section-image__desc {
+  color: var(--text-color-light);
+  font-size: 14px;
+  margin-top: 10px;
+  opacity: 0.8;
+  text-align: center;
+  font-style: italic;
+}
+
+@media (min-width: 768px) {
+  .realms-detail__section-content {
+    flex-direction: row;
+    gap: 80px;
+    margin-top: 24px;
+  }
+
+  .realms-detail__section-content div {
+    flex: 1;
+  }
+
+  .section-text {
+    margin-top: 0;
+  }
+
+  .section-image {
+    height: 620px;
+  }
+}
+
+@media (min-width: 1024px) {
+}

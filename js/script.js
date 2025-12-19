@@ -186,5 +186,3 @@ function initScrollAnimation() {
 
   animatedItems.forEach((item) => observer.observe(item));
 }
-
-// realms detail
