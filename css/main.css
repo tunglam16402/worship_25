@@ -99,7 +99,7 @@
 }
 
 .page-background__section {
-  background-image: url("../../assets/images/section-bg.png");
+  background-image: url("../assets/images/section-bg.png");
   background-size: 100% auto;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -111,7 +111,7 @@
 }
 
 .page-background__section--mirror {
-  background-image: url("../../assets/images/section-bg-mirror.png");
+  background-image: url("../assets/images/section-bg-mirror.png");
 }
 
 @media (min-width: 768px) {
