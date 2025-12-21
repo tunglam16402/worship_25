@@ -297,10 +297,14 @@ document.querySelectorAll(".realms-detail__section").forEach((section) => {
   if (text) text.innerHTML = content.text;
 
   const img = section.querySelector(".section-image");
-  if (img && content.image) {
-    img.src = content.image;
-    img.alt = data.title;
-  }
+  if (img) {
+    if (content.image) {
+      img.src = content.image;
+      img.alt = data.title;
+    } else {
+      img.remove(); 
+    }}
+
 
   const imgDesc = section.querySelector(".section-image__desc");
   if (imgDesc) imgDesc.textContent = content.imageDesc;

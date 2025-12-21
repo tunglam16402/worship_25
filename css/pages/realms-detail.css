@@ -60,10 +60,27 @@
     margin-top: 0;
   }
 
+  .realms-detail__section-title {
+    margin-top: 48px;
+    font-size: 32px;
+  }
+
+  #realms-detail__title {
+    font-size: 32px;
+  } 
+
   .section-image {
     height: 620px;
   }
 }
 
 @media (min-width: 1024px) {
+  .realms-detail__section-title {
+    margin-top: 60px;
+    font-size: 36px;
+  }
+
+   #realms-detail__title {
+    font-size: 36px;
+  } 
 }
