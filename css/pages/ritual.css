@@ -1,9 +1,5 @@
 /* ritual PAGE */
-.ritual {
-}
 
-.ritual__container {
-}
 
 .ritual__item:not(:first-child) {
   padding: 60px 0;
